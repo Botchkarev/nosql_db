@@ -1,0 +1,65 @@
+ACID and CAP 
+
+
+
+two connections: neo4j (7474) and bolt (7687)
+what is the difference between these two and why should i use them?
+
+
+from neo4j doc (:help bolt in neo4j browser):
+By default, Neo4j Browser communicates with the database via Bolt using the Neo4j JavaScript Driver. However it is possible to turn off Bolt and communicate with the database using HTTP(S) as in older versions of Neo4j Browser
+
+
+cypher: declarative query language like sql
+
+
+example tutorial: actors and the movies they acted in
+keine zuordnungstabelle notwendig, beziehungen durch arrows
+
+graph visualization: bloom
+
+how to create databases
+-> community edition has one database instance
+
+access to db:
+cypher shell
+web browser
+
+
+() is a node
+(variable:Table {properties to idenfity it}
+CREATE (TheMatrix:Movie {title:'The Matrix', released:1999, tagline:'Welcome to the Real World'})
+
+use cases:
+relationships are more readable and easier to manage
+more complicated relationships such as descendant, father_of, mother_of etc.
+are bidirectional relationships possible?
+
+
+
+REGEX? ~=
+
+SCHEMA?
+
+
+https://neo4j.com/docs/cypher-manual/current/clauses/delete/
+Relationships löschen:
+MATCH (n:Person {name: 'Laurence Fishburne'})-[r:ACTED_IN]->()
+DELETE r
+
+
+
+
+
+besondere:
+vergleich zu sql gelegentlich in bezug auf:
+- syntax
+
+- schema: 
+  - relationships
+  - datensätze
+    - nodes vs. variables
+- administrierung
+  - kommunikation mit datenbank
+  - zugriffskontrolle
+- konsistenz
